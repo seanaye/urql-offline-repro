@@ -11,11 +11,7 @@ import {
   useQuery,
 } from "urql";
 
-const storage = makeDefaultStorage({
-  idbName: "macro",
-});
-
-const cache = offlineExchange({ storage });
+const cache = offlineExchange({});
 
 export const client = createClient({
   url: "https://hungry-pig-70-2tepq6xrjxh0.deno.dev/",
