@@ -1,2 +1,4 @@
 # urql-offline-repro
-Usage
+
+### Usage
+`yarn dev`
