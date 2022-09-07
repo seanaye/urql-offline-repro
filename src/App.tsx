@@ -24,8 +24,7 @@ export const client = createClient({
       Credentials: "include",
     },
   },
-  // requestPolicy: "cache-and-network",
-  exchanges: [cache, dedupExchange, fetchExchange],
+  exchanges: [dedupExchange, cache, fetchExchange],
 });
 
 function UrqlProvider({ children }: { children: ReactNode }) {
@@ -41,7 +40,7 @@ const query = gql`
   }
 `;
 
-console.log(query.loc?.source.body)
+console.log(query.loc?.source.body);
 
 const query2 = gql`
   {
@@ -55,12 +54,10 @@ const query2 = gql`
 function DoQuery() {
   const [result] = useQuery({
     query,
-    requestPolicy: "network-only",
   });
 
   const [res2] = useQuery({
     query: query2,
-    requestPolicy: "network-only",
   });
 
   return (
@@ -70,7 +67,6 @@ function DoQuery() {
     </div>
   );
 }
-
 
 function App() {
   return (
